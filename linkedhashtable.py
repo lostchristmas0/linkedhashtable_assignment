@@ -8,8 +8,9 @@ author: Dongyu Wu, Chenghui Zhu
 
 from entry import ChainNode
 from set import SetType
+from collections.abc import Iterable, Iterator
 
-class Linkedhashtable(SetType):
+class Linkedhashtable(SetType, Iterable):
     """
     The Linkedhashtable class using a list as the hashtable to hold the key
     object, it uses direct chaining to handle collision, and rehash to keep
