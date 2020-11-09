@@ -125,19 +125,6 @@ class Linkedhashtable(SetType, Iterable):
                     return True
         return False
 
-    # def _find(self, obj):
-    #     toSearch = Entry(obj)
-    #     key = toSearch.getKey(self._capacity)
-    #     temp = self._list[key]
-    #     if str(temp) == obj:
-    #         return temp
-    #     else:
-    #         while not temp.getChain() is None:
-    #             temp = temp.getChain()
-    #             if str(temp) == obj:
-    #                 return temp
-    #     return None
-
     def remove(self, obj):
         """
         Remove a spcific entry(obj) form the hashtable
@@ -250,119 +237,9 @@ class Linkedhashtable(SetType, Iterable):
                 self.add(item)
             self._capacity = new_capacity
 
-    # def lookline(self, key):
-    #     """
-    #     The method for testing the direct chaining at a spcific position(key)
-    #     :param key: the location of hashtable
-    #     :return: a string contains all entries within the key
-    #     """
-    #     if self._list[key] is None:
-    #         return str(key) + ": " + "None"
-    #     else:
-    #         temp = self._list[key]
-    #         result = str(key) + ": " + str(temp)
-    #         while not temp.getChain() is None:
-    #             temp = temp.getChain()
-    #             result += " -> " + str(temp)
-    #         return result
-
     def __str__(self):
         result = "front -> "
         for item in self:
             result += str(item) + " "
         result += "<- back"
         return result
-
-
-
-
-
-
-if __name__ == '__main__':
-    # e1 = Entry("batman")
-    # e2 = Entry("has")
-    # e3 = Entry("lots")
-    # e4 = Entry("of")
-    # e5 = Entry("gizmos")
-    # e6 = Entry("in")
-    # e7 = Entry("his")
-    # e8 = Entry("belt")
-    # l = Linkedhashtable(6, 2)
-    # l.add(e1)
-    # l.add(e2)
-    # l.add(e3)
-    # l.add(e4)
-    # l.add(e5)
-    # l.add(e6)
-    # l.add(e7)
-    # l.add(e8)
-
-    e1 = ChainNode("lost")
-    e2 = ChainNode("christmas")
-    e3 = ChainNode("aoi")
-    e4 = ChainNode("shigure")
-    e5 = ChainNode("sena")
-    e6 = ChainNode("jelly")
-    e7 = ChainNode("fish")
-    e8 = ChainNode("code")
-    e9 = ChainNode("geass")
-    e10 = ChainNode("gebera")
-    e11 = ChainNode("cc")
-    e12 = ChainNode("blue")
-    l = Linkedhashtable(6, 0.8)
-    l.add(e1)
-    l.add(e2)
-    l.add(e3)
-    l.add(e4)
-    l.add(e5)
-    l.add(e6)
-    l.add(e7)
-    l.add(e8)
-    l.add(e9)
-    l.add(e10)
-    l.add(e11)
-    l.add(e12)
-
-    for item in l:
-        print(item)
-
-
-    print(l._size)
-    print(l._capacity)
-
-    print(l._front)
-    print(l._back)
-    # for i in range(l._capacity):
-    #     print(l.lookline(i))
-
-    print(l.contains("aoi"))
-    print(l.contains("lost"))
-    print(l.contains("blue"))
-    print(l.contains("cc"))
-    print(l.contains("aaaaa"))
-
-    # print("start remove--------------------")
-    # l.remove("cc")
-    # l.remove("fish")
-    # l.remove("geass")
-    # l.remove("lost")
-    # l.remove("blue")
-    # l.remove("christmas")
-    # l.remove("gebera")
-    # l.remove("shigure")
-    # l.remove("aoi")
-    # l.remove("sena")
-    # l.remove("code")
-    # l.remove("jelly")
-    #
-    # for item in l:
-    #     print(item)
-    # print("\n")
-    #
-    # print("size: " + str(l._size))
-    # print("capacity: " + str(l._capacity))
-    #
-    # print(l._front)
-    # print(l._back)
-    # for i in range(l._capacity):
-    #     print(l.lookline(i))
